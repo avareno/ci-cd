@@ -1,5 +1,6 @@
 name: "workshop github actions"
 on:
+  workflow_dispatch:
   pull_request:
     branches:
       - main
