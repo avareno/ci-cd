@@ -1,0 +1,21 @@
+name: "workshop github actions"
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint: # Any name you want 
+    name: Ansible Lint 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Install node
+        uses: actions/setup-node@v4.0.4
+
+      - name: Install dependencies
+        run: npm run setup
+
+      - name: Run Lint
+        run: npm run lint 
